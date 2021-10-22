@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>reservation</title>
+	<a href="{{ url_for('profilePage') }}" class="active">Profile</a>
+	<a href="{{ url_for('viewticket') }}" class="active">View Ticket</a>
+	<a href="{{ url_for('homepagetwo') }}" class="active">Home</a>
+	<a href="{{ url_for('logout') }}">Logout</a>
+</head>
+
+<body>
+	<form action="{{ url_for('reservation') }}" method="post" autocomplete="off">
+        			<label for="date">Date of Trip:</label><br>
+        			<input type="text" id="date" name="date"><br>
+       				 <label for="time">Time of Trip:</label><br>
+        			<input type="text" id="time" name="time"><br>
+        			<label for="droplocation">Drop-off Location:</label><br>
+        			<input type="text" id="droplocation" name="droplocation"><br>
+        			<label for="picklocation">Pick-up Location:</label><br>
+        			<input type="text" id="picklocation" name="picklocation"><br>
+        			<label for="miles">Miles of trip:</label><br>
+        			<input type="number" id="miles" name="miles"><br>
+        			<label for="passengeramount">Amount of Guest:</label><br>
+        			<input type="number" id="passengeramount" name="passengeramount"><br>
+				<div class="msg">{{ msg }}</div>
+       				 <input type="submit" value="Reserve">
+   			 </form>
+
+</body>
+
+
+
+</html>

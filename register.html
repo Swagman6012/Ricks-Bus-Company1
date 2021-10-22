@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Register</title>
+	<a href="{{ url_for('homepage') }}" class="active">Home</a>
+</head>
+<body>
+	<div class="register">
+    		<h1>Register</h1>
+				<div class="links">
+					<a href="{{ url_for('login') }}" class="active">Login</a>
+				<a href="{{ url_for('register') }}" class="active">register</a>
+
+			</div>
+    			<form action="{{ url_for('register') }}" method="post" autocomplete="off">
+        			<label for="firstname">First name:
+						<i class="fas fa-firstname"></i>
+					</label><br>
+        			<input type="text" id="firstname" name="firstname"><br>
+       				 <label for="lastname">Last name:
+					 	<i class="fas fa-lastname"></i>
+					 </label><br>
+        			<input type="text" id="lastname" name="lastname"><br>
+        			<label for="username">Username:
+						<i class="fas fa-user"></i>
+					</label><br>
+        			<input type="text" id="username" name="username"><br>
+					<label for="password">Password:
+						<i class="fas fa-lock"></i>
+					</label><br>
+        			<input type="text" id="password" name="password"><br>
+        			<label for="phone">Phone Number:
+						<i class="fas fa-phonebook"></i>
+					</label><br>
+        			<input type="text" id="phone" name="phone"><br>
+        			<label for="email">Email:
+						<i class="fas fa-envelope"></i>
+					</label><br>
+        			<input type="text" id="email" name="email"><br>
+					<div class="msg">{{ msg }}</div>
+       				 <input type="submit" value="register">
+   			 </form>
+    </div>
+</body>
+</html>

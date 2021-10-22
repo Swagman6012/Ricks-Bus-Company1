@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+	<title>Profilepage</title>
+         <a href="{{ url_for('viewticket') }}" class="active">View Ticket</a>
+        <a href="{{ url_for('reservation') }}" class="active">Reservation</a>
+	    <a href="{{ url_for('homepagetwo') }}" class="active">Home</a>
+	    <a href="{{ url_for('logout') }}">Logout</a>
+	</head>
+    <body>
+
+        <h1>Profile Page</h1>
+        <div>
+    <p>Your account details are below:</p>
+    <table style="border: 10px solid #080808">
+        <tr>
+            <td>Firstname:</td>
+            <td>{{ customer['firstname'] }}</td>
+        </tr>
+        <tr>
+            <td>Lastname:</td>
+            <td>{{ customer['lastname'] }}</td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td>{{ customer['username'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>{{ customer['password'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ customer['email'] }}</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>{{ customer['phone'] }}</td>
+        </tr>
+    </table>
+
+
+    </div>
+     </div>
+	</body>
+
+</html>
