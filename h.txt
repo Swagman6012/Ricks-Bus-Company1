@@ -1,0 +1,973 @@
+
+
+mysql> use BusCompany;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table Customer(
+    -> id int(11) not null auto_increment,
+    -> firstname varchar(25) not null,
+    -> lastname varchar(25) not null,
+    -> username varchar(25) not null,
+    -> password varchar(25) not null,
+    -> email varchar(25) not null,
+    -> phone varchar(14) not null,
+    -> constraint Customer_PK primary key (id)
+    -> constraint Customer_UK uniquw key (username));
+
+
+mysql> create table Customer(
+    -> id int(11) not null auto_increment,
+    -> firstname varchar(25) not null,
+    -> lastname varchar(25) not null,
+    -> username varchar(25) not null,
+    -> password varchar(25) not null,
+    -> email varchar(25) not null,
+    -> phone varchar(14) not null,
+    -> constraint Customer_PK primary key (id),
+    -> constraint Customer_UK unique key (username) );
+
+
+mysql> create table ticket(
+    -> date varchar(10) not null,
+    -> time varchar(5) not null,
+    -> droplocation varchar(30) not null,
+    -> picklocation varchar(30) not null,
+    -> miles int(3) not null,
+    -> passengeramount int(3) not null,
+    -> ticket_id int(11) not null auto_increment,
+    -> id int(11) not null,
+    -> constraint pk primary key(ticket_id),
+    -> constraint ticket_fk foreign key(id) references customer(id));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\student> start-transcript
+Transcript started, output file is C:\Users\student\Documents\PowerShell_transcript.DESKTOP-KIV3ORV.tJmokiwP.20211017215742.txt
+PS C:\Users\student> mysql -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.6.37 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use BusCompany;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table Customer(
+    -> id int(11) not null auto_increment,
+    -> firstname varchar(25) not null,
+    -> lastname varchar(25) not null,
+    -> username varchar(25) not null,
+    -> password varchar(25) not null,
+    -> email varchar(25) not null,
+    -> phone varchar(14) not null,
+    -> constraint Customer_PK primary key (id)
+    -> constraint Customer_UK uniquw key (username));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint Customer_UK uniquw key (username))' at line 10
+mysql> create table Customer(
+    -> id int(11) not null auto_increment,
+    -> firstname varchar(25) not null,
+    -> lastname varchar(25) not null,
+    -> username varchar(25) not null,
+    -> password varchar(25) not null,
+    -> email varchar(25) not null,
+    -> phone varchar(14) not null,
+    -> constraint Customer_PK primary key (id),
+    -> constraint Customer_UK unique key (username) );
+Query OK, 0 rows affected (0.24 sec)
+
+mysql> show tables;
++----------------------+
+| Tables_in_buscompany |
++----------------------+
+| Customer             |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> describe customer
+    -> ;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int(11)     | NO   | PRI | NULL    | auto_increment |
+| firstname | varchar(25) | NO   |     | NULL    |                |
+| lastname  | varchar(25) | NO   |     | NULL    |                |
+| username  | varchar(25) | NO   | UNI | NULL    |                |
+| password  | varchar(25) | NO   |     | NULL    |                |
+| email     | varchar(25) | NO   |     | NULL    |                |
+| phone     | varchar(14) | NO   |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+7 rows in set (0.23 sec)
+
+mysql> create table ticket(
+    -> date varchar(10) not null,
+    -> time varchar(5) not null,
+    -> droplocation varchar(30) not null,
+    -> picklocation varchar(30) not null,
+    -> miles int(3) not null,
+    -> passengeramount int(3) not null,
+    -> ticket_id int(11) not null auto_increment,
+    -> id int(11) not null,
+    ->  constraint pk1 primary key(CUSTOMER_ID, PRODUCT_ID),
+    -> ):
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '):' at line 11
+mysql> create table ticket(
+    -> date varchar(10) not null,
+    -> time varchar(5) not null,
+    -> drop location varchar(30) not null,
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'drop location varchar(30) not null,
+)' at line 4
+mysql> create table ticket(
+    -> date varchar(10) not null,
+    -> time varchar(5) not null,
+    -> droplocation varchar(30) not null,
+    -> picklocation varchar(30) not null,
+    -> miles int(3) not null,
+    -> passengeramount int(3) not null,
+    -> ticket_id int(11) not null auto_increment,
+    -> id int(11) not null,
+    -> constraint pk primary key(ticket_id),
+    -> constraint ticket_fk foreign key(id) references customer(id));
+Query OK, 0 rows affected (0.16 sec)
+
+mysql> show tables
+    -> ;
++----------------------+
+| Tables_in_buscompany |
++----------------------+
+| Customer             |
+| ticket               |
++----------------------+
+2 rows in set (0.00 sec)
+
+mysql> describe customer, ticket
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' ticket' at line 1
+mysql> describe customer;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int(11)     | NO   | PRI | NULL    | auto_increment |
+| firstname | varchar(25) | NO   |     | NULL    |                |
+| lastname  | varchar(25) | NO   |     | NULL    |                |
+| username  | varchar(25) | NO   | UNI | NULL    |                |
+| password  | varchar(25) | NO   |     | NULL    |                |
+| email     | varchar(25) | NO   |     | NULL    |                |
+| phone     | varchar(14) | NO   |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+7 rows in set (0.02 sec)
+
+mysql> describe ticket;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| date            | varchar(10) | NO   |     | NULL    |                |
+| time            | varchar(5)  | NO   |     | NULL    |                |
+| droplocation    | varchar(30) | NO   |     | NULL    |                |
+| picklocation    | varchar(30) | NO   |     | NULL    |                |
+| miles           | int(3)      | NO   |     | NULL    |                |
+| passengeramount | int(3)      | NO   |     | NULL    |                |
+| ticket_id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| id              | int(11)     | NO   | MUL | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+8 rows in set (0.04 sec)
+
+mysql> exit
+Bye
+PS C:\Users\student> end-transcript
+end-transcript : The term 'end-transcript' is not recognized as the name of
+a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and
+try again.
+At line:1 char:1
++ end-transcript
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (end-transcript:String) [], C
+   ommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\student> end transcript
+At line:1 char:4
++ end transcript
++    ~
+Missing statement block after 'end'.
+At line:1 char:5
++ end transcript
++     ~~~~~~~~~~
+Unexpected token 'transcript' in expression or statement.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecor
+   dException
+    + FullyQualifiedErrorId : MissingNamedStatementBlock
+
+PS C:\Users\student> exit-transcript
+exit-transcript : The term 'exit-transcript' is not recognized as the name
+of a cmdlet, function, script file, or operable program. Check the spelling
+of the name, or if a path was included, verify that the path is correct and
+try again.
+At line:1 char:1
++ exit-transcript
++ ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (exit-transcript:String) [],
+   CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\student> end-transcript
+end-transcript : The term 'end-transcript' is not recognized as the name of
+a cmdlet, function, script file, or operable program. Check the spelling of
+the name, or if a path was included, verify that the path is correct and
+try again.
+At line:1 char:1
++ end-transcript
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (end-transcript:String) [], C
+   ommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\student> mysql -u root -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 53
+Server version: 5.6.37 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use buscompany
+Database changed
+mysql> show tables;
++----------------------+
+| Tables_in_buscompany |
++----------------------+
+| Customer             |
+| ticket               |
++----------------------+
+2 rows in set (0.13 sec)
+
+mysql> insert into ticket price int(3);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'price int(3)' at line 1
+mysql> alter table ticket
+    -> ;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> describe ticket;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| date            | varchar(10) | NO   |     | NULL    |                |
+| time            | varchar(5)  | NO   |     | NULL    |                |
+| droplocation    | varchar(30) | NO   |     | NULL    |                |
+| picklocation    | varchar(30) | NO   |     | NULL    |                |
+| miles           | int(3)      | NO   |     | NULL    |                |
+| passengeramount | int(3)      | NO   |     | NULL    |                |
+| ticket_id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| id              | int(11)     | NO   | MUL | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+8 rows in set (0.60 sec)
+
+mysql> alter table ticket
+    -> add [COLUMN] price int(4) [FIRST|AFTER existing_column],
+    -> add [COLUMN] balance int(5) [FIRST|AFTER existing_column];
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[COLUMN] price int(4) [FIRST|AFTER existing_column],
+add [COLUMN] balance int(5)' at line 2
+mysql> delte table ticket;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'delte table ticket' at line 1
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
