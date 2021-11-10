@@ -5,16 +5,6 @@ Database changed
 mysql> show tables;
 Empty set (0.00 sec)
 
-mysql> create table Customer(
-    -> id int(11) not null auto_increment,
-    -> firstname varchar(25) not null,
-    -> lastname varchar(25) not null,
-    -> username varchar(25) not null,
-    -> password varchar(25) not null,
-    -> email varchar(25) not null,
-    -> phone varchar(14) not null,
-    -> constraint Customer_PK primary key (id)
-    -> constraint Customer_UK uniquw key (username));
 
 
 mysql> create table Customer(
@@ -30,17 +20,28 @@ mysql> create table Customer(
 
 
 mysql> create table ticket(
-    -> date varchar(10) not null,
+    -> date date not null,
     -> time varchar(5) not null,
     -> droplocation varchar(30) not null,
     -> picklocation varchar(30) not null,
     -> miles int(3) not null,
     -> passengeramount int(3) not null,
+	price int(5) not null,
+	balance int(5) not null, 
     -> ticket_id int(11) not null auto_increment,
     -> id int(11) not null,
     -> constraint pk primary key(ticket_id),
     -> constraint ticket_fk foreign key(id) references customer(id));
 
+
+create table Admin(
+       admin_id int(11) not null auto_increment,
+       firstname varchar(25) not null,
+    -> lastname varchar(25) not null,
+    -> username varchar(25) not null,
+    -> password varchar(25) not null,
+    -> email varchar(25) not null,
+       constraint pk primary key(admin_id))
 
 
 
