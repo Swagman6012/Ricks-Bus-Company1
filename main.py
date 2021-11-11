@@ -37,6 +37,8 @@ def login():
             session['loggedin'] = True
             session['id'] = customer['id']
             session['username'] = customer['username']
+            session['numtickets'] = customer['numtickets']
+            session['currentticket'] = customer['numtickets']
 
             return homepagetwo()
         else:
@@ -97,7 +99,7 @@ def register():
             msg = 'Please fill out the form!'
         else:
 
-            cursor.execute('INSERT INTO customer VALUES (NULL, %s, %s, %s, %s, %s, %s)',
+            cursor.execute('INSERT INTO customer VALUES (NULL, %s, %s, %s, %s, %s, %s, 0)',
                            (firstname, lastname, username, password, email, phone))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
@@ -149,8 +151,11 @@ def reservation():
             msg = 'Please fill out the form!'
         else:
 
-            cursor.execute('INSERT INTO ticket VALUES (%s, %s, %s, %s, %s, %s, NULL, %s)',
-                           (date, time, droplocation, picklocation, miles, passengeramount, session['id']))
+            session['numtickets'] = session['numtickets'] + 1
+            session['currentticket'] = session['numtickets']
+            cursor.execute('INSERT INTO ticket VALUES (%s, %s, %s, %s, %s, %s, NULL, %s, %s)',
+                           (date, time, droplocation, picklocation, miles, passengeramount, session['id']), session['numtickets'])
+            cursor.execute('UPDATE customer SET numtickets = %s WHERE id = %s', (session['numtickets'], session['id']))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
 
@@ -166,8 +171,16 @@ def reservation():
 def viewticket():
     x = 0
     if 'loggedin' in session:
+        if request.form['submit_button'] == 'next' and session['currentticket'] == session['numtickets']:
+            session['currentticket'] = 1
+        elif request.form['submit_button'] == 'next':
+            session['currentticket'] = session['currentticket'] + 1
+        elif request.form['submit_button'] == 'previous' and session['currentticket'] == 1:
+            session['currentticket'] = session['numtickets']
+        elif request.form['submit_button'] == 'previous':
+            session['currentticket'] == session['currentticket'] - 1
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM ticket WHERE id = %s', (session['id'],))
+        cursor.execute('SELECT * FROM ticket WHERE id = %s AND custicketid = %s', (session['id'], session['currentticket']))
         customer = cursor.fetchone()
 
         return render_template('viewticket.html', customer=customer)

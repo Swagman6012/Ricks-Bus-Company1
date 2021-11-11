@@ -15,6 +15,7 @@ mysql> create table Customer(
     -> password varchar(25) not null,
     -> email varchar(25) not null,
     -> phone varchar(14) not null,
+    -> numtickets int(11) not null,
     -> constraint Customer_PK primary key (id),
     -> constraint Customer_UK unique key (username) );
 
@@ -30,6 +31,7 @@ mysql> create table ticket(
 	balance int(5) not null, 
     -> ticket_id int(11) not null auto_increment,
     -> id int(11) not null,
+    -> custicketid int(11) not null,
     -> constraint pk primary key(ticket_id),
     -> constraint ticket_fk foreign key(id) references customer(id));
 
