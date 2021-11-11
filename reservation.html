@@ -1,14 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>reservation</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	
+
+<body style="background-color: lightblue;" class="centered-wrapper">
+        <div class="centered-content">
+        	<title>reservation</title>
 	<a href="{{ url_for('profilePage') }}" class="active">Profile</a>
 	<a href="{{ url_for('viewticket') }}" class="active">View Ticket</a>
 	<a href="{{ url_for('homepagetwo') }}" class="active">Home</a>
 	<a href="{{ url_for('logout') }}">Logout</a>
 </head>
-
-<body>
 	<form action="{{ url_for('reservation') }}" method="post" autocomplete="off">
         			<label for="date">Date of Trip:</label><br>
         			<input type="text" id="date" name="date"><br>
@@ -22,11 +26,29 @@
         			<input type="number" id="miles" name="miles"><br>
         			<label for="passengeramount">Amount of Guest:</label><br>
         			<input type="number" id="passengeramount" name="passengeramount"><br>
-				<div class="msg">{{ msg }}</div>
+				<div class="msg"></div>
        				 <input type="submit" value="Reserve">
+
+       				 </div>
    			 </form>
 
+
+   			 <h4>Payment Options</h4>
+   	 <div class="row">
+            <div id="profile-link">
+                <a href="https://www.bitcoin.com/" target="_blank"><i class="fa fa-bitcoin"></i></a>
+                <a href="https://www.americanexpress.com/" target="_blank"><i class="fa fa-cc-amex"></i></a>
+                <a href="https://www.stripe.com/" target="_blank"><i class="fa fa-cc-stripe"></i></a>
+                <a href="https://www.visa.com/" target="_blank"><i class="fa fa-cc-visa"></i></a>
+                <a href="https://www.googlepay.com/" target="_blank"><i class="fa fa-google-wallet"></i></a>
+                <a href="https://www.discover.com/" target="_blank"><i class="fa fa-cc-discover"></i></a>
+            </div>
+
 </body>
+
+		<div id="photo-gallery">
+				<img src="https://i.dlpng.com/static/png/6464972_preview.png">
+				</div>
 
 
 
