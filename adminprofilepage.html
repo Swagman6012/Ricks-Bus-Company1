@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+	<title>Profilepage</title>
+         <a href="{{ url_for('Adminviewticket') }}" class="active">View Ticket</a>
+	    <a href="{{ url_for('adminhomepage') }}" class="active">Home</a>
+	    <a href="{{ url_for('logout') }}">Logout</a>
+	</head>
+    <body>
+
+        <h1>Profile Page</h1>
+        <div>
+    <p>Your account details are below:</p>
+    <table style="border: 10px solid #080808">
+        <tr>
+            <td>Firstname:</td>
+            <td>{{ Admin['firstname'] }}</td>
+        </tr>
+        <tr>
+            <td>Lastname:</td>
+            <td>{{ Admin['lastname'] }}</td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td>{{ Admin['username'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>{{ Admin['password'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ Admin['email'] }}</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>{{ Admin['phone'] }}</td>
+        </tr>
+    </table>
+
+
+    </div>
+     </div>
+	</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <
+    <title>View Ticket</title>
+    <a href="{{ url_for('AdminprofilePage') }}" class="active">Profile</a>
+    <a href="{{ url_for('Adminhomepage') }}" class="active">Home</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</head>
+<body>
+
+        <h1>View Tickets</h1>
+        <div>
+    <p>Your ticket details are below:</p>
+    <table style="border: 10px solid #080808">
+        <tr>
+            <td>Date of Trip:</td>
+            <td>{{ customer['date'] }}</td>
+        </tr>
+        <tr>
+            <td>Time of Trip:</td>
+            <td>{{ customer['time'] }}</td>
+        </tr>
+        <tr>
+            <td>Pick-up Location:</td>
+            <td>{{ customer['picklocation'] }}</td>
+        </tr>
+        <tr>
+            <td>Drop-off Location:</td>
+            <td>{{ customer['droplocation'] }}</td>
+        </tr>
+        <tr>
+            <td>Miles of Trip:</td>
+            <td>{{ customer['miles'] }}</td>
+        </tr>
+        <tr>
+            <td>Amount of Passengers:</td>
+            <td>{{ customer['passengeramount'] }}</td>
+        </tr>
+    </table>
+
+    <form action="{{ url_for('viewticket') }}" method="GET" autocomplete="off">
+
+        <input type="submit" name="submit_button" value="next">
+
+    </form>
+
+
+    </div>
+     </div>
+</body>
+</html>
