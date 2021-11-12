@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Login</title>
 	<a href="{{ url_for('homepage') }}" class="active">Home</a>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-  <div class="login">
+
+<body class="login">
 			<h1>Login</h1>
 			<div class="links">
 				<a href="{{ url_for('login') }}" class="active">Login</a>
@@ -20,9 +22,19 @@
 
 				</label>
 				<input type="password" name="password" placeholder="Password" id="password" required>
-				<div class="msg">{{ msg }}</div>
+				<div class="msg"></div>
 				<input type="submit" value="Login">
 			</form>
 		</div>
+
+
 </body>
+
+<div id="photo-gallery">
+				<img src="https://ak.picdn.net/shutterstock/videos/1053042311/thumb/1.jpg">
+				</div>
+
+
+
+
 </html>
