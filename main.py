@@ -166,7 +166,74 @@ def reservation():
 
     return render_template('Reservation.html', msg=msg)
 
+@app.route('/adminregister', methods=['GET', 'POST'])
+def adminregster():
 
+
+        msg = ''
+
+        if request.method == 'POST' and 'firstname' in request.form and 'lastname' in request.form and 'username' in request.form and 'password' in request.form and 'email' in request.form and 'phone' in request.form:
+
+            firstname = request.form['firstname']
+            lastname = request.form['lastname']
+            username = request.form['username']
+            password = request.form['password']
+            email = request.form['email']
+            phone = request.form['phone']
+
+            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute('SELECT * FROM Admin WHERE username = %s', (username,))
+            account = cursor.fetchone()
+
+            if account:
+                msg = 'Account already exists!'
+            elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+                msg = 'Invalid email address!'
+            elif not re.match(r'[A-Za-z0-9]+', username):
+                msg = 'Username must contain only characters and numbers!'
+            elif not re.match(r'[A-Za-z0-9]+', phone):
+                msg = 'Username must contain only characters and numbers!'
+            elif not re.match(r'[A-Za-z0-9]+', firstname):
+                msg = 'Username must contain only characters and numbers!'
+            elif not re.match(r'[A-Za-z0-9]+', lastname):
+                msg = 'Username must contain only characters and numbers!'
+            elif not username or not password or not email or not phone or not firstname or not lastname:
+                msg = 'Please fill out the form!'
+            else:
+
+                cursor.execute('INSERT INTO admin VALUES (NULL, %s, %s, %s, %s, %s, %s, )',
+                               (firstname, lastname, username, password, email, phone))
+                mysql.connection.commit()
+                msg = 'You have successfully registered as an Admin!'
+@app.route('/adminlogin', methods=['GET', 'POST'])
+def login():
+    msg = ''
+
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'employercode':
+
+        username = request.form['username']
+        password = request.form['password']
+        employercode = request.form['employercode']
+
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute('SELECT * FROM admin WHERE username = %s AND password = %s', (username, password,))
+
+        admin = cursor.fetchone()
+        if employercode != '098734':
+            msg = 'Not a valid Employer code!'
+        if admin:
+
+            session['loggedin'] = True
+            session['id'] = admin['id']
+            session['username'] = admin['username']
+
+
+            return homepageadmin()
+        else:
+
+            msg = 'Incorrect username/password!'
+
+    return render_template('login.html', msg=msg)
 @app.route('/pythonlogin/viewticket', methods=["GET"])
 def viewticket():
     x = 0
