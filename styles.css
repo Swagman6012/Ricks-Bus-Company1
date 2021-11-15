@@ -1,6 +1,4 @@
-div {
-	font-family: verdana;
-}
+
 
 .centered-wrapper {
     position: relative;
@@ -18,11 +16,6 @@ div {
     vertical-align: middle;
 }
 
-#photo-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 
 
 .fa {
@@ -40,32 +33,32 @@ div {
 
 
 .fa-cc-discover {
-	font-size: 24px;
-	color: black;
+	font-size: 30px;
+	color: #FFFF00;
 }
 
 .fa-bitcoin {
-	font-size: 24px;
-	color: black;
+	font-size: 30px;
+	color: #FFFF00;
 }
 
 .fa-cc-amex {
-	font-size: 24px;
-	color: black;
+	font-size: 30px;
+	color: #FFFF00;
 }
 
 .fa-cc-stripe {
-	font-size: 24px;
-	color: black;
+	font-size: 30px;
+	color: #FFFF00;
 }
 
 .fa-cc-visa {
-	font-size: 24px;
-	color: black;
+	font-size: 30px;
+	color: #FFFF00;
 }
 
 .fa-google-wallet {
-	font-size: 24px;
-	color: black;
+	font-size: 30px;
+	color: #FFFF00;
 }
 

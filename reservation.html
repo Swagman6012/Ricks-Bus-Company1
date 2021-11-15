@@ -5,13 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	
 
-<body style="background-color: lightblue;" class="centered-wrapper">
+<body style='background: url("https://papers.co/wallpaper/papers.co-ag78-google-lollipop-january-blue-background-35-3840x2160-4k-wallpaper.jpg") 150% fixed'; class="centered-wrapper">
         <div class="centered-content">
         	<title>reservation</title>
-	<a href="{{ url_for('profilePage') }}" class="active">Profile</a>
-	<a href="{{ url_for('viewticket') }}" class="active">View Ticket</a>
-	<a href="{{ url_for('homepagetwo') }}" class="active">Home</a>
-	<a href="{{ url_for('logout') }}">Logout</a>
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/profilepage.html"  class="active">Profile</a>
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/viewticket.html" class="active">View Ticket</a>
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/homepagetwo.html" class="active">Home</a>
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/login.html">Logout</a>
 </head>
 	<form action="{{ url_for('reservation') }}" method="post" autocomplete="off">
         			<label for="date">Date of Trip:</label><br>
@@ -33,23 +33,20 @@
    			 </form>
 
 
-   			 <h4>Payment Options</h4>
+   			 <h4 style="color: blue;">Payment Options</h4>
    	 <div class="row">
             <div id="profile-link">
                 <a href="https://www.bitcoin.com/" target="_blank"><i class="fa fa-bitcoin"></i></a>
                 <a href="https://www.americanexpress.com/" target="_blank"><i class="fa fa-cc-amex"></i></a>
                 <a href="https://www.stripe.com/" target="_blank"><i class="fa fa-cc-stripe"></i></a>
                 <a href="https://www.visa.com/" target="_blank"><i class="fa fa-cc-visa"></i></a>
-                <a href="https://www.googlepay.com/" target="_blank"><i class="fa fa-google-wallet"></i></a>
+                <a href="https://pay.google.com/about/" target="_blank"><i class="fa fa-google-wallet"></i></a>
                 <a href="https://www.discover.com/" target="_blank"><i class="fa fa-cc-discover"></i></a>
             </div>
 
 </body>
 
-		<div id="photo-gallery">
-				<img src="https://i.dlpng.com/static/png/6464972_preview.png">
-				</div>
-
+		
 
 
 </html>
