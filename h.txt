@@ -43,7 +43,8 @@ create table Admin(
     -> username varchar(25) not null,
     -> password varchar(25) not null,
     -> email varchar(25) not null,
-       constraint pk primary key(admin_id))
+       phone varchar(14) not null,
+       constraint pk primary key(admin_id));
 
 
 
