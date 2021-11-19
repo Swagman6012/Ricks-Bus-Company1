@@ -8,6 +8,7 @@
     display: inline-block;
     width: 0; height: 100%;
     vertical-align: middle;
+
 }
 .centered-content {
     display: inline-block;
@@ -15,5 +16,12 @@
 }
 
 .active{
-    class: #000000;
+    color: #FFFFFF;
 }
+
+.register{
+    color: #FFFFFF;
+}
+
+
+
