@@ -1,0 +1,64 @@
+
+
+.centered-wrapper {
+    position: relative;
+    text-align: center;
+}
+.centered-wrapper:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 0; height: 100%;
+    vertical-align: middle;
+}
+.centered-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+.fa-cc-discover {
+	font-size: 30px;
+	color: #FFFF00;
+}
+
+.fa-bitcoin {
+	font-size: 30px;
+	color: #FFFF00;
+}
+
+.fa-cc-amex {
+	font-size: 30px;
+	color: #FFFF00;
+}
+
+.fa-cc-stripe {
+	font-size: 30px;
+	color: #FFFF00;
+}
+
+.fa-cc-visa {
+	font-size: 30px;
+	color: #FFFF00;
+}
+
+.fa-google-wallet {
+	font-size: 30px;
+	color: #FFFF00;
+}
+

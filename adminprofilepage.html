@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+         <link rel="stylesheet" type="text/css" href="profile.css">
+
+	<title>Profilepage</title>
+         <a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/adminviewticket.html" class="moka">View Ticket</a>
+	    <a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/adminhomepage.html" class="moka">Home</a>
+	    <a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/adminlogin.html" class="moka">Logout</a>
+	</head>
+    <body style='background: url("https://www.sailsrestaurants.com/_cms3/wwwroot/adminPublicFiles/design/cms3admin-background-01.jpg") 50% fixed'; class="centered-wrapper">>
+
+        <h1 style="color: #FFFFFF">Profile Page</h1>
+        <div>
+    <p style="color: #FFFFFF">Your account details are below:</p>
+    <table style="margin-left: auto; margin-right: auto; border: 10px solid #080808; color: #FFFFFF">
+        <tr>
+            <td>Firstname:</td>
+            <td>{{ Admin['firstname'] }}</td>
+        </tr>
+        <tr>
+            <td>Lastname:</td>
+            <td>{{ Admin['lastname'] }}</td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td>{{ Admin['username'] }}</td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td>{{ Admin['password'] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ Admin['email'] }}</td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+            <td>{{ Admin['phone'] }}</td>
+        </tr>
+    </table>
+
+
+    </div>
+     </div>
+	</body>
+
+</html>

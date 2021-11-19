@@ -1,19 +1,23 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>reservation</title>
-	<a href="{{ url_for('profilePage') }}" class="active">Profile</a>
-	<a href="{{ url_for('viewticket') }}" class="active">View Ticket</a>
-	<a href="{{ url_for('homepagetwo') }}" class="active">Home</a>
-	<a href="{{ url_for('logout') }}">Logout</a>
-</head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	
 
-<body>
+<body style='background: url("https://papers.co/wallpaper/papers.co-ag78-google-lollipop-january-blue-background-35-3840x2160-4k-wallpaper.jpg") 150% fixed'; class="centered-wrapper">
+        <div class="centered-content">
+        	<title>reservation</title>
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/profilepage.html"  class="active">Profile</a>
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/viewticket.html" class="active">View Ticket</a>
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/homepagetwo.html" class="active">Home</a>
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/login.html">Logout</a>
+</head>
 	<form action="{{ url_for('reservation') }}" method="post" autocomplete="off">
         			<label for="date">Date of Trip:</label><br>
-        			<input type="text" id="date" name="date"><br>
+        			<input type="date" id="date" name="date"><br>
        				 <label for="time">Time of Trip:</label><br>
-        			<input type="text" id="time" name="time"><br>
+        			<input type="time" id="time" name="time"><br>
         			<label for="droplocation">Drop-off Location:</label><br>
         			<input type="text" id="droplocation" name="droplocation"><br>
         			<label for="picklocation">Pick-up Location:</label><br>
@@ -22,8 +26,10 @@
         			<input type="number" id="miles" name="miles"><br>
         			<label for="passengeramount">Amount of Guest:</label><br>
         			<input type="number" id="passengeramount" name="passengeramount"><br>
-				<div class="msg">{{ msg }}</div>
+				<div class="msg"></div>
        				 <input type="submit" value="Reserve">
+
+       				 </div>
    			 </form>
 
    	<title>Payment Platforms</title>
@@ -43,6 +49,22 @@
 
    </body>
 
+
+   			 <h4 style="color: blue;">Payment Options</h4>
+   	 <div class="row">
+            <div id="profile-link">
+                <a href="https://www.bitcoin.com/" target="_blank"><i class="fa fa-bitcoin"></i></a>
+                <a href="https://www.americanexpress.com/" target="_blank"><i class="fa fa-cc-amex"></i></a>
+                <a href="https://www.stripe.com/" target="_blank"><i class="fa fa-cc-stripe"></i></a>
+                <a href="https://www.visa.com/" target="_blank"><i class="fa fa-cc-visa"></i></a>
+                <a href="https://pay.google.com/about/" target="_blank"><i class="fa fa-google-wallet"></i></a>
+                <a href="https://www.discover.com/" target="_blank"><i class="fa fa-cc-discover"></i></a>
+            </div>
+
+</body>
+
+
+		
 
 
 </html>

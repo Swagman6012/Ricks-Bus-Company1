@@ -1,15 +1,16 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="admin.css">
     <title>Admin Login</title>
-	<a href="{{ url_for('homepage') }}" class="active">Home</a
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/homepage.html" class="active">Home</a>
 </head>
-<body>
+<body style='background: url("https://cdn.dribbble.com/users/2008861/screenshots/15526868/media/75d00bc49c493701ec1a0cd51da86a8e.gif") 100% fixed'; class="centered-wrapper">
   <div class="login">
 			<h1>Admin Login</h1>
 			<div class="links">
-				<a href="{{ url_for('adminlogin') }}" class="active">Login</a>
-				<a href="{{ url_for('adminregister') }}" class="active">Register</a>
+				<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/login.html" class="active">Login</a>
+				<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/adminregister.html" class="active">Admin Register</a>
 			</div>
 			<form action="{{ url_for('login') }}" method="post">
 				<label for="username">
@@ -20,7 +21,11 @@
 
 				</label>
 				<input type="password" name="password" placeholder="Password" id="password" required>
-				<div class="msg">{{ msg }}</div>
+				<label for="employercode">
+
+				</label>
+				<input type="text" name="employercode" placeholder="Employer Code" id="employercode" required>
+				<div class="msg"></div>
 				<input type="submit" value="Login">
 			</form>
 		</div>

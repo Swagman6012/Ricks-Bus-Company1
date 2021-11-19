@@ -4,17 +4,16 @@
     <
     <link rel="stylesheet" type="text/css" href="ticket.css">
     <title>View Ticket</title>
-    <a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/profilepage.html" class="active">Profile</a>
-    <a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/reservation.html" class="active">Reservation</a>
-    <a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/homepagetwo.html" class="active">Home</a>
+    <a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/adminprofilepage.html" class="active">Profile</a>
+    <a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/adminhomepage.html" class="active">Home</a>
     <a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/login.html">Logout</a>
 </head>
-<body style='background: url("https://i.pinimg.com/originals/b9/c3/a4/b9c3a43aee11519094c9a39bc6e2f0f3.jpg") 150% fixed'; class="centered-wrapper">
+<body style='background: url("https://cdn.wallpapersafari.com/35/21/TXzy5q.gif") 100% fixed'; class="centered-wrapper">
 
         <h1>View Tickets</h1>
         <div>
     <p>Your ticket details are below:</p>
-    <table style="margin-left: auto; margin-right: auto; border: 10px solid #080808;"> 
+    <table style= "margin-left: auto; margin-right: auto; border: 10px solid #080808">
         <tr>
             <td>Date of Trip:</td>
             <td>{{ customer['date'] }}</td>
@@ -41,7 +40,7 @@
         </tr>
     </table>
 
-    <form action="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/viewticket.html" method="GET" autocomplete="off">
+    <form action="{{ url_for('viewticket') }}" method="GET" autocomplete="off">
 
         <input type="submit" name="submit_button" value="Next">
 

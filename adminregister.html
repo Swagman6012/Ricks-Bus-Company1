@@ -1,15 +1,16 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="admin.css">
     <title>Admin Register</title>
-	<a href="{{ url_for('homepage') }}" class="active">Home</a
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/homepage.html" class="kula">Home</a
 </head>
-<body>
+<body style='background: url("https://cdn.dribbble.com/users/4435100/screenshots/15114878/media/4c6a0c6609a93d143bb24302f91a8657.gif") 100% fixed'; class="centered-wrapper">
 	<div class="register">
     		<h1>Admin Register</h1>
 				<div class="links">
-					<a href="{{ url_for('adminlogin') }}" class="active">Login</a>
-				<a href="{{ url_for('adminregister') }}" class="active">Register</a>
+					<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/adminlogin.html" class="kula">Admin Login</a>
+				
 
 			</div>
     			<form action="{{ url_for('register') }}" method="post" autocomplete="off">
@@ -37,7 +38,7 @@
 						<i class="fas fa-envelope"></i>
 					</label><br>
         			<input type="text" id="email" name="email"><br>
-					<div class="msg">{{ msg }}</div>
+					<div class="msg"></div>
        				 <input type="submit" value="register">
    			 </form>
     </div>

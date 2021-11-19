@@ -1,15 +1,17 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <title>Login</title>
-	<a href="{{ url_for('homepage') }}" class="active">Home</a>
+	<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/homepage.html" class="active">Home</a>
 </head>
-<body>
-  <div class="login">
+
+<body style='background: url("https://www.wallpapers4u.org/wp-content/uploads/bus_flight_sky_animals_cartoon_57256_1920x1080.jpg") 150% fixed'>
 			<h1>Login</h1>
 			<div class="links">
-				<a href="{{ url_for('login') }}" class="active">Login</a>
-				<a href="{{ url_for('register') }}" class="active">Register</a>
+				
+				<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/register.html" class="active">Register</a>
+				<a href="file:///C:/Users/lhern/Documents/GitHub/Ricks-Bus-Company1/adminlogin.html" class="active">Admin Login</a>
 			</div>
 			<form action="{{ url_for('login') }}" method="post">
 				<label for="username">
@@ -20,9 +22,15 @@
 
 				</label>
 				<input type="password" name="password" placeholder="Password" id="password" required>
-				<div class="msg">{{ msg }}</div>
+				<div class="msg"></div>
 				<input type="submit" value="Login">
 			</form>
 		</div>
+
+
 </body>
+
+
+
+
 </html>
