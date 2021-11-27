@@ -1,6 +1,7 @@
 .centered-wrapper {
     position: relative;
     text-align: center;
+
 }
 .centered-wrapper:before {
     content: "";
@@ -22,6 +23,11 @@
 .kula{
     color: #000000;
 }
+
+.koko{
+    color: greenyellow;
+}
+
 
 
 

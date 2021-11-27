@@ -16,6 +16,10 @@
     vertical-align: middle;
 }
 
+.coyo{
+    color: #000000;
+}
+
 
 
 .fa {
@@ -34,31 +38,36 @@
 
 .fa-cc-discover {
 	font-size: 30px;
-	color: #FFFF00;
+	color: #000000;
 }
 
 .fa-bitcoin {
 	font-size: 30px;
-	color: #FFFF00;
+	color: #000000;
 }
 
 .fa-cc-amex {
 	font-size: 30px;
-	color: #FFFF00;
+	color: #000000;
 }
 
 .fa-cc-stripe {
 	font-size: 30px;
-	color: #FFFF00;
+	color: #000000;
 }
 
 .fa-cc-visa {
 	font-size: 30px;
-	color: #FFFF00;
+	color: #000000;
 }
 
 .fa-google-wallet {
 	font-size: 30px;
-	color: #FFFF00;
+	color: #000000;
+}
+
+.fa-paypal{
+    font-size: 30px;
+    color: #000000;
 }
 
