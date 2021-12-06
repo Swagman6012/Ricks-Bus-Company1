@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <
+    <link rel="stylesheet" type="text/css" href="ticket.css">
+    <title>View Ticket</title>
+    <a href="{{ url_for('adminprofilepage') }}" class="active">Profile</a>
+    <a href="{{ url_for('adminviewticket') }}" class="active">Home</a>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</head>
+<body style='background: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX34628281.jpg") 50% fixed'; class="centered-wrapper">
+
+        <h1>View Tickets</h1>
+        <div>
+    <p>Your ticket details are below:</p>
+
+        <form  method="POST"  style= "margin-left: auto; margin-right: auto; border: 10px solid #080808">
+        			<label >Date of Trip:</label><br>
+                    {{ customer['date'] }}<br>
+                    <label>Time of Trip:</label><br>
+        			{{ customer['time'] }}<br>
+        			<label >Drop-off Location:</label><br>
+        			{{ customer['droplocation'] }}<br>
+        			<label >Pick-up Location:</label><br>
+        			{{ customer['picklocation'] }}<br>
+        			<label >Miles of trip:</label><br>
+        			{{ customer['miles'] }}<br>
+        			<label >Amount of Guest:</label><br>
+        			{{ customer['passengeramount'] }}<br>
+                    <label for="price">Price:</label><br>
+        			<input type="price" id="price" name="price" placeholder="{{ customer['price'] }}"><br>
+                    <label for="balance">Balance:</label><br>
+        			<input type="balance" id="balance" name="balance" placeholder="{{ customer['balance'] }}"><br>
+				<div class="msg"></div>
+       				 <input type="submit" value="Update">
+        </form>
+
+    <form action="{{ url_for('adminviewticket') }}" method="GET" autocomplete="off">
+
+        <input type="submit" name="submit_button" value="Return">
+
+    </form>
+
+
+    </div>
+     </div>
+</body>
+</html>

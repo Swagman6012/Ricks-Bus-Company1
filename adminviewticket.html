@@ -10,6 +10,7 @@
 </head>
 <body style='background: url("https://cdn.wallpapersafari.com/35/21/TXzy5q.gif") 100% fixed'; class="centered-wrapper">
 
+
         <h1>View Tickets</h1>
         <div>
     <p>Your ticket details are below:</p>
@@ -38,14 +39,30 @@
             <td>Amount of Passengers:</td>
             <td>{{ customer['passengeramount'] }}</td>
         </tr>
+        <td>Price:</td>
+            <td>$ {{ customer['price'] }}</td>
+        </tr>
+        <tr>
+            <td>Balance:</td>
+            <td>$ {{ customer['balance'] }}</td>
+        </tr>
     </table>
 
-    <form action="{{ url_for('viewticket') }}" method="GET" autocomplete="off">
+    <form action="{{ url_for('adminviewticket') }}" method="GET" autocomplete="off">
 
         <input type="submit" name="submit_button" value="Next">
 
     </form>
+    <form action="{{ url_for('editticket') }}" method="GET" autocomplete="off">
 
+        <input type="submit" name="submit_button" value="Update">
+
+    </form>
+            <form action="{{ url_for('adminviewticket') }}" method="POST" autocomplete="off">
+
+        <input type="submit" name="submit_button" value="Cancel">
+
+    </form>
 
     </div>
      </div>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="profile.css">
+	<title>Profilepage</title>
+         <a href="{{ url_for('viewticket') }}" class="active">View Ticket</a>
+        <a href="{{ url_for('reservation') }}" class="active">Reservation</a>
+	    <a href="{{ url_for('homepagetwo') }}" class="active">Home</a>
+	    <a href="{{ url_for('logout') }}">Logout</a>
+	</head>
+<body style='background: url("https://wallpaperaccess.com/full/449976.jpg") 150% fixed'; class="centered-wrapper">
+
+        <h1>Profile Page</h1>
+        <div>
+    <p>Your account details are below:</p>
+    <form style="margin-left: auto; margin-right: auto; border: 10px solid #080808"  method="POST" >
+        <label for="firstname">First name:
+						<i class="fas fa-firstname"></i>
+					</label><br>
+        			<input type="text" id="firstname" name="firstname" placeholder="{{ customer['firstname'] }}"><br>
+       				 <label for="lastname">Last name:
+					 	<i class="fas fa-lastname"></i>
+					 </label><br>
+        			<input type="text" id="lastname" name="lastname" placeholder="{{ customer['lastname'] }}"><br>
+        			<label>Username:
+						<i class="fas fa-user"></i>
+					</label><br>
+        			{{ customer['username'] }}<br>
+					<label for="password">Password:
+						<i class="fas fa-lock"></i>
+					</label><br>
+        			<input type="text" id="password" name="password" placeholder="{{ customer['password'] }}"><br>
+        			<label for="phone">Phone Number:
+						<i class="fas fa-phonebook"></i>
+					</label><br>
+        			<input type="text" id="phone" name="phone"placeholder="{{ customer['phone'] }}"><br>
+        			<label for="email">Email:
+						<i class="fas fa-envelope"></i>
+					</label><br>
+        			<input type="text" id="email" name="email"placeholder="{{ customer['email'] }}"><br>
+					<div class="msg"></div>
+       				 <input type="submit" value="update" >
+    </form>
+
+	<form action="{{ url_for('profilePage') }}" method="GET" autocomplete="off">
+
+        <input type="submit" name="submit_button" value="Return">
+
+    </form>
+    </div>
+     </div>
+	</body>
+
+</html>
